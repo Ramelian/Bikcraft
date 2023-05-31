@@ -1,38 +1,6 @@
 import {
-  magicPage,
-  magic,
-  nebulaPage,
-  nebula,
-  nimbus,
-  nimbusPage,
-  preview,
-  technologia,
-  testimony,
-} from "../../assets/images";
-import {
-  arrow,
-  dots,
-  dotsRev,
-  list,
-  next,
-  topRight,
-} from "../../assets/svg/dec";
-import {
-  carvan,
-  dogs,
-  flexblog,
-  handel,
-  lescone,
-  ranek,
-  surfbot,
-  wildbeast,
-} from "../../assets/svg/partners";
-import { facebook, instagram, youtube } from "../../assets/svg/socials";
-import {
   bikeimg,
   target,
-  action,
-  delivery,
   speed,
   material,
 } from "../../assets/svg";
@@ -61,7 +29,7 @@ const Catalog = () => {
             <div className="bike container fadeInRight" data-anime="200">
               <div className="bike-img">
                 <img
-                  src={`http://localhost:4444/uploads/${bike.imgUrl}`}
+                  src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
                   alt="Bicicleta"
                 />
                 <span className="font-2-m color-0 fadeInLeft" data-anime="300">
