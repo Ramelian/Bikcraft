@@ -139,7 +139,7 @@ const Product = () => {
                 <li key={index}>
                   <div className="fadeInRight" data-anime="500">
                     <img
-                      src={`http://localhost:4444/uploads/${bike.imgUrl}`}
+                      src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
                       alt="Bicicleta preta"
                     />
                     <h3 className="font-1-xl fadeInRight" data-anime="600">
