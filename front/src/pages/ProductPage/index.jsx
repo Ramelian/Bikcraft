@@ -23,7 +23,7 @@ const Product = () => {
       });
   }, [id]);
 
-  const image = `http://localhost:4444/uploads/${data.imgUrl}`;
+  const image = `https://bikcraft.onrender.com/uploads/${data.imgUrl}`;
   const images = [image, image, image];
 
   return (

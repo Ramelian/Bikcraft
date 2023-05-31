@@ -106,7 +106,7 @@ const Home = () => {
                 <li key={bike._id} className="fadeInRight" data-anime="800">
                   <Link to={`/product/${bike._id}`}>
                     <img
-                      src={`http://localhost:4444/uploads/${bike.imgUrl}`}
+                      src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
                       alt="Bicicleta preta"
                       width="920"
                       height="1040"
