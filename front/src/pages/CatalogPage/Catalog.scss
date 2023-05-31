@@ -1,0 +1,110 @@
+/*Bike container for bicicletas.html (note turn on -bg for even bikes)*/
+
+.bike-bg {
+	background: linear-gradient(to right,var(--color-0) 30%,var(--color-11) 0);
+}
+
+.bike {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+	background: url("../../assets/svg/dec/dots-rev.svg") no-repeat top 40px right 20px;
+}
+
+.bike-img {
+	display: grid;
+}
+
+.bike-img img {
+	grid-area: 1/1;
+}
+
+.bike-img span {
+	grid-area: 1/1;
+	place-self: start end;
+	margin-top: 20px;
+	background: var(--color-12);
+	display: inline-block;
+	padding: 8px 16px 8px 8px;
+	border-radius: 4px 0 0 4px;
+}
+
+.bike-content {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	align-content: start;
+}
+
+.bike h2,.bike p {
+	grid-column: 1/-1;
+}
+
+.bike h2 {
+	margin-bottom: 20px;
+}
+
+.bike h2::before {
+	content: "";
+	display: block;
+	width: 12px;
+	height: 8px;
+	background-color: var(--color-p1);
+	margin-bottom: 8px;
+}
+
+.bike p {
+	margin-bottom: 32px;
+}
+
+.bike a {
+	place-self: end;
+}
+
+.bike li {
+	display: flex;
+	align-items: center;
+}
+
+.bike ul {
+	display: grid;
+	gap: 16px;
+}
+
+.bike-content img {
+	width: 24px;
+	margin-right: 8px;
+}
+/*Responsive*/
+@media (max-width:800px) {
+	.bike-bg {
+		background: var(--color-11);
+	}
+
+	.bike {
+		grid-template-columns: 1fr;
+		gap: 20px;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+/*Responsive*/
+@media (max-width:600px) {
+	.bike{
+		max-width: calc(100% - 40px) !important;
+	}
+	.bike-content {
+		grid-template-columns: 1fr;
+	}
+
+	.bike ul {
+		font-size: 1rem;
+		grid-template-columns: 1fr 1fr;
+		margin-bottom: 32px;
+	}
+
+	.bike a {
+		place-self: start;
+	}
+}

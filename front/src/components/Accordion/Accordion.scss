@@ -1,0 +1,39 @@
+.accordion {
+  padding-block: 20px;
+  & .item {
+    cursor: pointer;
+    &.gray {
+      background-color: var(--color-1);
+    }
+    padding: 10px;
+    .title {
+      display: flex;
+      justify-content: space-between;
+      h4 {
+        &::before {
+          content: "";
+          display: inline-block;
+          height: 8px;
+          width: 12px;
+          margin-right: 8px;
+          background-color: var(--color-p1);
+          transition: width 0.2s;
+        }
+      }
+    }
+
+    p {
+        padding-block: 5px;
+      &.show {
+        max-height: 1000px;
+        transition: max-height 1s ease-in-out;
+      }
+
+      &.hide {
+        max-height: 0;
+        overflow: hidden;
+        transition: 0.3s ;
+      }
+    }
+  }
+}

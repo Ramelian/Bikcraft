@@ -1,0 +1,31 @@
+.named-bg {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  background-color: var(--color-11);
+}
+
+.named {
+  background: url("../../assets/svg/dec/dots.svg") no-repeat top right 20px;
+}
+
+.named p {
+  margin-bottom: 4px;
+}
+/*Responsive*/
+@media (max-width: 800px) {
+  .named-bg {
+    padding-top: 40px;
+    padding-bottom: 40px;
+    p {
+      margin-bottom: 50px;
+    }
+  }
+
+  .named {
+    p {
+      font-size: 1rem;
+      text-transform: lowercase;
+      font-weight: 400;
+    }
+  }
+}

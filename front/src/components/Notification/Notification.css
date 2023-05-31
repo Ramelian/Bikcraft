@@ -1,0 +1,33 @@
+.notification {
+  display: flex;
+  align-items: center;
+  background-color: #4caf50;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  margin-bottom: 20px;
+}
+
+.notification.success {
+  background-color: #4caf50;
+}
+
+.notification .icon {
+  margin-right: 10px;
+}
+
+.notification .message {
+  font-weight: bold;
+}
+
+.notification.error {
+  background-color: #e53935;
+}
+
+.notification.error .icon {
+  color: #e53935;
+}
+
+.notification.error .message {
+  color: black;
+}

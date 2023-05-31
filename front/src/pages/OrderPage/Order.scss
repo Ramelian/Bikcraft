@@ -1,0 +1,21 @@
+h4 {
+  background-color: transparent;
+  margin-bottom: 25px !important;
+
+  &.light {
+    color: var(--color-5);
+  }
+  &.dark {
+    color: var(--color-9);
+  }
+
+  &::before {
+    content: "";
+    display: inline-block;
+    height: 10px;
+    width: 4px;
+    margin-right: 8px;
+    background-color: var(--color-p1);
+    transition: width 0.2s;
+  }
+}

@@ -1,0 +1,21 @@
+.contacts {
+    box-sizing: border-box;
+  h4 {
+    margin-bottom: 40px;
+  }
+  .item {
+    padding-block: 20px;
+    img {
+      margin-right: 20px;
+      align-self: flex-start;
+    }
+    ul {
+        display: flex;
+        flex-direction: column;
+      li {
+        display: inline;
+        margin-bottom: 5px;
+      }
+    }
+  }
+}

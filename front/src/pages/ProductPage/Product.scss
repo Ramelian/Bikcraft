@@ -1,0 +1,242 @@
+.bikes { /*name sucks*/
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	align-items: start;
+	gap: 40px;
+	padding-top: 60px;
+	padding-bottom: 60px;
+}
+
+#bikes .named p {
+	text-transform: uppercase;
+}
+
+.bikes-imgs {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.bikes-imgs img {
+	flex: 1;
+	min-width: 200px;
+}
+
+.bikes-imgs img:first-child {
+	min-width: 100%;
+}
+
+.bike-img-switchable { /*not sure if needed */
+	cursor: pointer;
+}  
+
+.bikes-content>p {
+	margin-bottom: 32px;
+}
+
+.bikes-name {
+	display: grid;
+	grid-template-columns: max-content auto;
+	align-items: center;
+	justify-items: start;
+	gap: 8px 12px;
+	margin-bottom: 40px;
+}
+
+.bikes-name a {
+	grid-row: span 2;
+}
+
+.bikes-name span {
+	display: flex;
+	align-items: center;
+	background-color: var(--color-12);
+	gap: 8px;
+	padding: 4px 8px;
+	border-radius: 4px;
+}
+
+.bikes-content h2 {
+	text-transform: uppercase;
+	letter-spacing: .015em;
+	margin-bottom: 12px;
+}
+
+.bikes-list,.bikes-infos {
+	padding: 32px;
+	background-color: var(--color-12);
+	border-radius: 4px;
+}
+
+.bikes-infos {
+	margin-bottom: 40px;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 32px;
+}
+
+.bikes-infos img {
+	width: 24px;
+	margin-bottom: 8px;
+}
+
+.bikes-infos h3 {
+	margin-bottom: 8px;
+}
+
+.bikes-list li {
+	padding: 4px 0;
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px solid var(--color-11);
+}
+
+.bikes-list li:last-child {
+	border-bottom: none;
+}
+
+.bikes-list span {
+	color: var(--color-6);
+}
+/*Responsive*/
+@media (max-width:800px) {
+	.bikes {
+		grid-template-columns: 1fr;
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+
+	.bikes-imgs {
+		grid-row: 2;
+	}
+}
+
+@media (max-width:400px) {
+	.bikes-infos {
+		grid-template-columns: 1fr;
+	}
+
+	.bikes-name {
+		grid-template-columns: 1fr;
+	}
+}
+
+/*Bike showout on -(bike-name)*/
+
+.bike-show {
+	padding-top: 60px;
+	padding-bottom: 120px;
+}
+
+.bike-show h2 {
+	margin-bottom: 40px;
+}
+
+.bike-show ul {
+	display: flex;
+	gap: 40px;
+	padding: 0 20px 20px 20px;
+	max-width: 1400px;
+	margin-left: auto;
+	margin-right: auto;
+	overflow-x: auto;
+}
+
+#bike .bike-show ul {
+	padding: 0 0 20px 0;
+}
+
+.bike-show li {
+	flex: 1;
+	min-width: 280px;
+}
+
+.bike-show a {
+	display: block;
+}
+
+.bike-show img {
+	margin-bottom: 16px;
+}
+
+.bike-show h3 {
+	margin-bottom: 8px;
+	display: flex;
+	align-items: center;
+}
+
+.bike-show h3::before {
+	content: "";
+	display: inline-block;
+	height: 8px;
+	width: 12px;
+	margin-right: 8px;
+	background-color: var(--color-p1);
+	transition: width .2s;
+}
+
+.bike-show a:hover h3::before {
+	width: 24px;
+}
+
+.bike-show li span {
+	padding-left: 20px;
+}
+/*Responsive maybe to place bikes in collumn instead of row?*/
+@media (max-width:800px) {
+	.bike-show {
+		padding-bottom: 60px;
+	}
+
+	.bike-show ul {
+		gap: 20px;
+	}
+}
+
+/*Insurance (a div on -(bike-name))*/
+
+.insurance-bg {
+	background-color: var(--color-11);
+	box-shadow: inset 0 120px var(--color-0),inset 0 -120px var(--color-12);
+}
+
+.insurance {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 40px;
+}
+
+.insurance-img img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.insurance-content {
+	padding-top: 180px;
+	padding-bottom: 180px;
+}
+
+.insurance h2 {
+	margin-bottom: 32px;
+}
+
+.insurance p {
+	margin-bottom: 20px;
+}
+/*Responsive*/
+@media (max-width:800px) {
+	.insurance-bg {
+		box-shadow: inset 0 -60px var(--color-12);
+	}
+
+	.insurance {
+		grid-template-columns: 1fr;
+	}
+
+	.insurance-content {
+		grid-row: 1;
+		padding-top: 40px;
+		padding-bottom: 0;
+	}
+}
