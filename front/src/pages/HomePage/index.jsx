@@ -1,12 +1,4 @@
-import {
-  magicPage,
-  nebulaPage,
-  nimbus,
-  nimbusPage,
-  preview,
-  technologia,
-  testimony,
-} from "../../assets/images";
+import { nimbus, preview, technologia, testimony } from "../../assets/images";
 import {
   carvan,
   dogs,
@@ -18,7 +10,7 @@ import {
   wildbeast,
 } from "../../assets/svg/partners";
 import "./Home.scss";
-import { useEffect, useContext, useState } from "react";
+import { useEffect, useContext } from "react";
 import { Advantages, Pricing } from "../../components";
 import { Link } from "react-router-dom";
 import { BikesContext } from "../../Context";
@@ -36,12 +28,11 @@ const typeWriter = (textElement, text, delay = 50) => {
       setTimeout(type, delay);
     }
   };
-
   type();
 };
 
 const Home = () => {
-  const { bikes, loading } = useContext(BikesContext);
+  const { bikes } = useContext(BikesContext);
 
   useEffect(() => {
     const textElement = document.getElementById("typing-text");
@@ -93,33 +84,30 @@ const Home = () => {
           </picture>
         </div>
       </div>
-      {loading ? (
-        <div>Loading...</div>
-      ) : (
-        <div className="bike-list">
-          <h2 className="container font-1-xxl fadeInDown" data-anime="200">
-            escolha a sua<span className="color-p1">.</span>
-          </h2>
-          <ul>
-            {bikes.slice(0, 3).map((bike) => {
-              return (
-                <li key={bike._id} className="fadeInRight" data-anime="800">
-                  <Link to={`/product/${bike._id}`}>
-                    <img
-                      src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
-                      alt="Bicicleta preta"
-                      width="920"
-                      height="1040"
-                    />
-                    <h3 className="font-1-xl">{bike.name}</h3>
-                    <span className="font-2-m color-8">R$ {bike.price}</span>
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
+
+      <div className="bike-list">
+        <h2 className="container font-1-xxl fadeInDown" data-anime="200">
+          escolha a sua<span className="color-p1">.</span>
+        </h2>
+        <ul>
+          {bikes.slice(0, 3).map((bike) => {
+            return (
+              <li key={bike._id} className="fadeInRight" data-anime="800">
+                <Link to={`/product/${bike._id}`}>
+                  <img
+                    src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
+                    alt="Bicicleta preta"
+                    width="920"
+                    height="1040"
+                  />
+                  <h3 className="font-1-xl">{bike.name}</h3>
+                  <span className="font-2-m color-8">R$ {bike.price}</span>
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
 
       <div className="tech-bg">
         <div className="tech container">
@@ -137,9 +125,9 @@ const Home = () => {
               ergonomia na sua pedalada. Você pode também personalizar
               completamente as suas cores.
             </p>
-            <a className="link fadeInDown" data-anime="400" to="./1">
+            <div className="link fadeInDown" data-anime="400" to="/info">
               Escolha um modelo
-            </a>
+            </div>
             <Advantages techArray={["bike", "madeOf"]} />
           </div>
           <div className="tech-img fadeInUp" data-anime="1000">

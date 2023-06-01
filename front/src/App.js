@@ -1,7 +1,15 @@
 import { Routes, Route } from "react-router-dom";
-import { Header, Footer } from "./components";
-import { Home, Catalog, Product, InfoPage, Contacts, OrderPage, NotFoundPage } from "./pages";
-import { useEffect, useState, useContext } from "react";
+import { Header, Footer, Loading } from "./components";
+import {
+  Home,
+  Catalog,
+  Product,
+  InfoPage,
+  Contacts,
+  OrderPage,
+  NotFoundPage,
+} from "./pages";
+import { useEffect, useContext } from "react";
 import { useLocation } from "react-router-dom";
 import { BikesContext } from "./Context";
 import axios from "./axios.js";
@@ -18,7 +26,7 @@ const fadeIn = (entries, observer) => {
 const App = () => {
   const { pathname } = useLocation();
   const { mobile, setMobile } = useContext(BikesContext);
-  const { bikes, setBikes, setLoading } = useContext(BikesContext);
+  const { bikes, setBikes, setLoading, loading } = useContext(BikesContext);
   // Animation
   useEffect(() => {
     const elements = document.querySelectorAll("[data-anime]");
@@ -39,12 +47,6 @@ const App = () => {
   }, [pathname, mobile, bikes]);
 
   useEffect(() => {
-    if (bikes.length !== 0) {
-      setLoading(false);
-    }
-  }, [bikes, setLoading]);
-
-  useEffect(() => {
     const handleResize = () => {
       setMobile(() => {
         return window.innerWidth <= 800;
@@ -56,31 +58,36 @@ const App = () => {
 
     // Call handleResize initially to set the initial screen size
     handleResize();
-
+    
     axios
       .get("/product")
-      .then((response) => setBikes(response.data))
+      .then((response) => {
+        setLoading(false);
+        setBikes(response.data);
+      })
       .catch((err) => console.log(err));
 
     // Clean up the event listener on component unmount
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  }, [setBikes, setMobile]);
-
-  console.log(bikes);
+  }, [setBikes, setMobile, setLoading]);
   return (
     <>
       <Header mobile={mobile} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/catalog" element={<Catalog />} />
-        <Route path="/product/:id" element={<Product />} />
-        <Route path="/info" element={<InfoPage />} />
-        <Route path="/contacts" element={<Contacts />} />
-        <Route path="/order" element={<OrderPage />} />
-        <Route path='*' element={<NotFoundPage />} />
-      </Routes>
+      {loading ? (
+        <Loading />
+      ) : (
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/catalog" element={<Catalog />} />
+          <Route path="/product/:id" element={<Product />} />
+          <Route path="/info" element={<InfoPage />} />
+          <Route path="/contacts" element={<Contacts />} />
+          <Route path="/order" element={<OrderPage />} />
+          <Route path="*" element={<NotFoundPage />} />
+        </Routes>
+      )}
       <Footer />
     </>
   );

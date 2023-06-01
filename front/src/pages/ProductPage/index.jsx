@@ -1,7 +1,7 @@
 import "./Product.scss";
-import { magic, nebula, insurance } from "../../assets/images";
+import {  insurance } from "../../assets/images";
 import { bikeimg, material, speed, target } from "../../assets/svg";
-import { Title, ImageSlider } from "./../../components";
+import { Title, ImageSlider, Loading } from "./../../components";
 import { useContext, useEffect, useState } from "react";
 import axios from "../../axios.js";
 import { useParams } from "react-router";
@@ -9,7 +9,7 @@ import { BikesContext } from "../../Context";
 import { Link } from "react-router-dom";
 
 const Product = () => {
-  const { mobile, bikes, loading } = useContext(BikesContext);
+  const { mobile, bikes } = useContext(BikesContext);
   const { id } = useParams();
 
   const [data, setData] = useState({});
@@ -25,6 +25,10 @@ const Product = () => {
 
   const image = `https://bikcraft.onrender.com/uploads/${data.imgUrl}`;
   const images = [image, image, image];
+  
+  if(!!!data) {
+    return <Loading />
+  }
 
   return (
     <>
@@ -133,7 +137,7 @@ const Product = () => {
         </h2>
 
         <ul>
-          {bikes.slice(0, 2).map((bike, index) => {
+          {bikes.filter(item => item._id !== id).map((bike, index) => {
             return (
               <Link to={`/product/${bike._id}`}>
                 <li key={index}>

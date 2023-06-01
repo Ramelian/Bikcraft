@@ -14,24 +14,24 @@ const Footer = () => {
           <h3 className="font-2-l-b color-0">Contato</h3>
           <ul className="font-2-m color-5">
             <li>
-              <a>+55 21 9999-9999</a>
+              <div className="li-item">+55 21 9999-9999</div>
             </li>
             <li>
-              <a>contato@bikcraft.com</a>
+              <div className="li-item">contato@bikcraft.com</div>
             </li>
             <li>Rua Ali Perto, 42 - Botafogo</li>
             <li>Rio de Janeiro - RJ</li>
           </ul>
           <div className="footer-socials">
-            <a>
+            <div className="li-item">
               <img src={instagram} width="32" height="32" alt="Instagram" />
-            </a>
-            <a>
+            </div>
+            <div className="li-item">
               <img src={facebook} width="32" height="32" alt="Facebook" />
-            </a>
-            <a>
+            </div>
+            <div className="li-item">
               <img src={youtube} width="32" height="32" alt="Youtube" />
-            </a>
+            </div>
           </div>
         </div>
         <div className="footer-info">
@@ -40,22 +40,22 @@ const Footer = () => {
             <ul className="font-1-m color-5">
               <li>
                 <Link to="/catalog">
-                  <a>Bicicletas</a>
+                  <div className="li-item">Bicicletas</div>
                 </Link>
               </li>
               <li>
                 <Link to="/info">
-                  <a>Seguros</a>
+                  <div className="li-item">Seguros</div>
                 </Link>
               </li>
               <li>
                 <Link to="/contacts">
-                  <a>Contato</a>
+                  <div className="li-item">Contato</div>
                 </Link>
               </li>
               <li>
                 <Link to="/">
-                  <a>Termos e Condições</a>
+                  <div className="li-item">Termos e Condições</div>
                 </Link>
               </li>
             </ul>

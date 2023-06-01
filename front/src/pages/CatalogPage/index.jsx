@@ -10,11 +10,8 @@ import { useContext } from "react";
 import { BikesContext } from "../../Context";
 import { Link } from "react-router-dom";
 const Catalog = () => {
-  const { bikes, loading } = useContext(BikesContext);
+  const { bikes} = useContext(BikesContext);
 
-  if(loading){
-    return <div>Loading...</div>;
-  }
   return (
     <>
       <Title title="nossas bicicletas" text="Escolha a melhor para você" />

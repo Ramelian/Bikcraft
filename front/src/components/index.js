@@ -11,6 +11,7 @@ import Location from "./Location";
 import OrderSelector from "./OrderSelector";
 import OrderForm from "./OrderForm";
 import ImageSlider from './ImageSlider/index';
+import Loading from "./Loading";
 
 export {
   Header,
@@ -25,5 +26,6 @@ export {
   Location,
   OrderSelector,
   OrderForm,
-  ImageSlider
+  ImageSlider,
+  Loading
 };
