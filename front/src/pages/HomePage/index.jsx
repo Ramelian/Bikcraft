@@ -142,7 +142,7 @@ const Home = () => {
       </div>
 
       <div className="partners" area-label="Nossos Parceiros">
-        <Title title="nossos parceiros" />
+        <Title styling="whiteBg" title="nossos parceiros" />
 
         <ul>
           <li className="fadeInRight" data-anime="1000">
