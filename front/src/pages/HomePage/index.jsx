@@ -125,7 +125,12 @@ const Home = () => {
               ergonomia na sua pedalada. Você pode também personalizar
               completamente as suas cores.
             </p>
-            <div className="link fadeInDown" data-anime="400" to="/info">
+            <div
+              style={{ marginBottom: "20px" }}
+              className="link fadeInDown"
+              data-anime="400"
+              to="/info"
+            >
               Escolha um modelo
             </div>
             <Advantages techArray={["bike", "madeOf"]} />
@@ -137,7 +142,7 @@ const Home = () => {
       </div>
 
       <div className="partners" area-label="Nossos Parceiros">
-      <Title title="nossos parceiros"/>
+        <Title title="nossos parceiros" />
 
         <ul>
           <li className="fadeInRight" data-anime="1000">
