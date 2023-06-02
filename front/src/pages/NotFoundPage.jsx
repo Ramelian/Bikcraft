@@ -10,7 +10,8 @@ const NotFoundPage = () => {
         alignItems: "center",
         justifyContent: "center",
         minHeight: "80vh",
-        paddingInline: "20px"
+        paddingInline: "20px",
+        textAlign: "center"
       }}
     >
       <h1 style={{ color: "black", fontSize: "3rem", marginBottom: "20px" }}>
