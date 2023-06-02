@@ -169,10 +169,7 @@ const Product = () => {
             <img src={insurance} alt="1" />
           </div>
           <div className="insurance-content fadeInRight" data-anime="800">
-            <h2 className="font-1-xxl color-0">
-              Pedale mais tranquilo com o nosso{" "}
-              <span className="color-p1">insurance.</span>
-            </h2>
+            <Title title="Pedale mais tranquilo com o nosso"/>
             <p className="font-2-l color-5">
               Inscreva-se em um dos planos do nosso insurance Bikcraft e
               aproveite diversos benefícios.
