@@ -35,16 +35,13 @@
     background-size: cover;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 900px) {
   .card {
-    transform: translateY(-12%);
+    transform: translateY(-200px);
     flex-direction: column;
     padding-bottom: 70px;
     .first {
       width: calc(100% - 80px);
-    }
-    .second {
-      
     }
   }
 }

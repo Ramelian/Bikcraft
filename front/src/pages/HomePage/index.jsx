@@ -11,7 +11,7 @@ import {
 } from "../../assets/svg/partners";
 import "./Home.scss";
 import { useEffect, useContext } from "react";
-import { Advantages, Pricing } from "../../components";
+import { Advantages, Pricing, Title } from "../../components";
 import { Link } from "react-router-dom";
 import { BikesContext } from "../../Context";
 
@@ -137,9 +137,7 @@ const Home = () => {
       </div>
 
       <div className="partners" area-label="Nossos Parceiros">
-        <h2 className="container font-1-xxl">
-          nossos parceiros<span className="color-p1">.</span>
-        </h2>
+      <Title title="nossos parceiros"/>
 
         <ul>
           <li className="fadeInRight" data-anime="1000">
