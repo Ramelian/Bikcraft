@@ -95,7 +95,7 @@ const Home = () => {
               <li key={bike._id} className="fadeInRight" data-anime="800">
                 <Link to={`/product/${bike._id}`}>
                   <img
-                    src={`../../assets/images${bike.imgUrl}`}
+                    src={`../../assets/images/${bike.imgUrl}`}
                     alt="Bicicleta preta"
                     width="920"
                     height="1040"
