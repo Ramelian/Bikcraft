@@ -26,7 +26,7 @@ const Catalog = () => {
             <div className="bike container fadeInRight" data-anime="200">
               <div className="bike-img">
                 <img
-                  src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
+                  src={`/bikes/${bike.imgUrl}`}
                   alt="Bicicleta"
                 />
                 <span className="font-2-m color-0 fadeInLeft" data-anime="300">

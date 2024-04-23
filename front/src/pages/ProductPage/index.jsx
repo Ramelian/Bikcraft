@@ -23,7 +23,7 @@ const Product = () => {
       });
   }, [id]);
 
-  const image = `https://bikcraft.onrender.com/uploads/${data.imgUrl}`;
+  const image = `/bikes/${data.imgUrl}`;
   const images = [image, image, image];
   
   if(!!!data) {
@@ -143,7 +143,7 @@ const Product = () => {
                 <li key={index}>
                   <div className="fadeInRight" data-anime="500">
                     <img
-                      src={`https://bikcraft.onrender.com/uploads/${bike.imgUrl}`}
+                      src={`/bikes/${bike.imgUrl}`}
                       alt="Bicicleta preta"
                     />
                     <h3 className="font-1-xl fadeInRight" data-anime="600">

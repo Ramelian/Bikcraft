@@ -33,7 +33,7 @@ const SelectorItem = ({ index, text, data, choose, chosen }) => {
             </li>
           </ul>
           <img
-            src={`https://bikcraft.onrender.com/uploads/${data.imgUrl}`}
+            src={`/bikes/${data.imgUrl}`}
             alt="bike"
           />
         </div>
